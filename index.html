@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+    <meta charset="UTF-8">
+    <title>新浪移动事业部2016年会抽奖</title>
+</head>
+<style>
+body{background:#000;height: 2000px;}
+canvas{background:#fff;}
+#j_imgCrop{ width:800px;height:600px;border:20px solid red; position: relative; margin:50px auto;}
+</style>
+
+<body>
+    <input type="file" accept="image/*">
+    <div id='j_imgCrop'></div>
+    <div id='j_imgCrop_show'></div>
+    <script type="text/javascript" src="js/js.js"></script>
+</body>
+<script>
+var oBox = document.querySelector('#j_imgCrop');
+
+var oFile = document.querySelector('input');
+oFile.onchange = function(){
+    var oImg = new Image();
+    oImg.src = URL.createObjectURL(this.files[0]);
+    oImg.onload = function(){
+        ImgCrop(oBox,oImg);
+    }
+}
+
+
+</script>
+</html>
